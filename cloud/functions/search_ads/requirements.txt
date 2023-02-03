@@ -1,0 +1,11 @@
+google-ads>=17.0.0
+google-api-python-client>=2.52.0
+google-cloud-logging
+pandas>=1.2.2
+gspread_dataframe
+gspread_formatting
+google-cloud-firestore>=2.5.1
+beautifulsoup4>=4.10.0
+torch>=1.13.1
+sentence-transformers>=2.2.2
+numpy>=1.21.2

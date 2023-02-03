@@ -1,0 +1,11 @@
+Flask>=1.1.2
+google-api-python-client>=1.9.1
+google-cloud-bigquery>=1.22.0
+google-cloud-firestore>=2.5.1
+google-cloud-logging>=3.0.0
+gspread>=3.6.0
+gspread-dataframe>=3.2.0
+pandas>=1.2.1
+pandas-gbq>=0.14.1
+google-auth>=1.35.0
+gspread-formatting>=1.0.6

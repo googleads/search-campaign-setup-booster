@@ -1,0 +1,19 @@
+import os
+from datetime import timedelta
+
+# session
+SECRET_KEY = os.urandom(24)
+PERMANENT_SESSION_LIFETIME = timedelta(days=7)  # 配置7天有效
+
+# credential
+PROJECT_ID = 'search-project-id'
+CLIENT_ID = '571404068263-xxxxxxxxqn7o34oh2k0m.apps.googleusercontent.com'
+CLIENT_SECRET = 'XXXXX-kmffYFP6p5VK5bOWh_S_bXXXXX'
+DEVELOPER_TOKEN = 'WXXXXXXXXXX6ktw'
+
+# credential save path
+CREDENTIAL_COLLECTION_NAME = 'credentials'
+CREDENTIAL_DOCUMENT_NAME = 'search'
+
+# app setting
+KEYWORD_EXPANSION_TRIX_ID = "XXXmM8XXXXXXWTCrEzmJgcp6M"

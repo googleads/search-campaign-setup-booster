@@ -1,0 +1,242 @@
+criteria_id,name,code,type
+2004,Afghanistan,AF,Country
+2008,Albania,AL,Country
+2010,Antarctica,AQ,Country
+2012,Algeria,DZ,Country
+2016,American Samoa,AS,Country
+2020,Andorra,AD,Country
+2024,Angola,AO,Country
+2028,Antigua and Barbuda,AG,Country
+2031,Azerbaijan,AZ,Country
+2032,Argentina,AR,Country
+2036,Australia,AU,Country
+2040,Austria,AT,Country
+2044,The Bahamas,BS,Country
+2048,Bahrain,BH,Country
+2050,Bangladesh,BD,Country
+2051,Armenia,AM,Country
+2052,Barbados,BB,Country
+2056,Belgium,BE,Country
+2060,Bermuda,BM,Region
+2064,Bhutan,BT,Country
+2068,Bolivia,BO,Country
+2070,Bosnia and Herzegovina,BA,Country
+2072,Botswana,BW,Country
+2074,Bouvet Island,BV,Region
+2076,Brazil,BR,Country
+2084,Belize,BZ,Country
+2086,British Indian Ocean Territory,IO,Region
+2090,Solomon Islands,SB,Country
+2092,British Virgin Islands,VG,Region
+2096,Brunei,BN,Country
+2100,Bulgaria,BG,Country
+2104,Myanmar (Burma),MM,Country
+2108,Burundi,BI,Country
+2112,Belarus,BY,Country
+2116,Cambodia,KH,Country
+2120,Cameroon,CM,Country
+2124,Canada,CA,Country
+2132,Cape Verde,CV,Country
+2136,Cayman Islands,KY,Region
+2140,Central African Republic,CF,Country
+2144,Sri Lanka,LK,Country
+2148,Chad,TD,Country
+2152,Chile,CL,Country
+2156,China,CN,Country
+2158,Taiwan,TW,Region
+2162,Christmas Island,CX,Country
+2166,Cocos (Keeling) Islands,CC,Country
+2170,Colombia,CO,Country
+2174,Comoros,KM,Country
+2175,Mayotte,YT,Region
+2178,Republic of the Congo,CG,Country
+2180,Democratic Republic of the Congo,CD,Country
+2184,Cook Islands,CK,Country
+2188,Costa Rica,CR,Country
+2191,Croatia,HR,Country
+2196,Cyprus,CY,Country
+2203,Czechia,CZ,Country
+2204,Benin,BJ,Country
+2208,Denmark,DK,Country
+2212,Dominica,DM,Country
+2214,Dominican Republic,DO,Country
+2218,Ecuador,EC,Country
+2222,El Salvador,SV,Country
+2226,Equatorial Guinea,GQ,Country
+2231,Ethiopia,ET,Country
+2232,Eritrea,ER,Country
+2233,Estonia,EE,Country
+2234,Faroe Islands,FO,Region
+2238,Falkland Islands (Islas Malvinas),FK,Region
+2239,South Georgia and the South Sandwich Islands,GS,Country
+2242,Fiji,FJ,Country
+2246,Finland,FI,Country
+2250,France,FR,Country
+2254,French Guiana,GF,Region
+2258,French Polynesia,PF,Country
+2260,French Southern and Antarctic Lands,TF,Country
+2262,Djibouti,DJ,Country
+2266,Gabon,GA,Country
+2268,Georgia,GE,Country
+2270,The Gambia,GM,Country
+2275,Palestine,PS,Region
+2276,Germany,DE,Country
+2288,Ghana,GH,Country
+2292,Gibraltar,GI,Region
+2296,Kiribati,KI,Country
+2300,Greece,GR,Country
+2304,Greenland,GL,Region
+2308,Grenada,GD,Country
+2312,Guadeloupe,GP,Region
+2316,Guam,GU,Country
+2320,Guatemala,GT,Country
+2324,Guinea,GN,Country
+2328,Guyana,GY,Country
+2332,Haiti,HT,Country
+2334,Heard Island and McDonald Islands,HM,Country
+2336,Vatican City,VA,Country
+2340,Honduras,HN,Country
+2344,Hong Kong,HK,Region
+2348,Hungary,HU,Country
+2352,Iceland,IS,Country
+2356,India,IN,Country
+2360,Indonesia,ID,Country
+2368,Iraq,IQ,Country
+2372,Ireland,IE,Country
+2376,Israel,IL,Country
+2380,Italy,IT,Country
+2384,Cote d'Ivoire,CI,Country
+2388,Jamaica,JM,Country
+2392,Japan,JP,Country
+2398,Kazakhstan,KZ,Country
+2400,Jordan,JO,Country
+2404,Kenya,KE,Country
+2410,South Korea,KR,Country
+2414,Kuwait,KW,Country
+2417,Kyrgyzstan,KG,Country
+2418,Laos,LA,Country
+2422,Lebanon,LB,Country
+2426,Lesotho,LS,Country
+2428,Latvia,LV,Country
+2430,Liberia,LR,Country
+2434,Libya,LY,Country
+2438,Liechtenstein,LI,Country
+2440,Lithuania,LT,Country
+2442,Luxembourg,LU,Country
+2446,Macao,MO,Region
+2450,Madagascar,MG,Country
+2454,Malawi,MW,Country
+2458,Malaysia,MY,Country
+2462,Maldives,MV,Country
+2466,Mali,ML,Country
+2470,Malta,MT,Country
+2474,Martinique,MQ,Region
+2478,Mauritania,MR,Country
+2480,Mauritius,MU,Country
+2484,Mexico,MX,Country
+2492,Monaco,MC,Country
+2496,Mongolia,MN,Country
+2498,Moldova,MD,Country
+2499,Montenegro,ME,Country
+2500,Montserrat,MS,Region
+2504,Morocco,MA,Country
+2508,Mozambique,MZ,Country
+2512,Oman,OM,Country
+2516,Namibia,NA,Country
+2520,Nauru,NR,Country
+2524,Nepal,NP,Country
+2528,Netherlands,NL,Country
+2531,Curacao,CW,Country
+2533,Aruba,AW,Region
+2534,Sint Maarten,SX,Country
+2535,Caribbean Netherlands,BQ,Country
+2540,New Caledonia,NC,Country
+2548,Vanuatu,VU,Country
+2554,New Zealand,NZ,Country
+2558,Nicaragua,NI,Country
+2562,Niger,NE,Country
+2566,Nigeria,NG,Country
+2570,Niue,NU,Country
+2574,Norfolk Island,NF,Country
+2578,Norway,NO,Country
+2580,Northern Mariana Islands,MP,Country
+2581,United States Minor Outlying Islands,UM,Country
+2583,Federated States of Micronesia,FM,Country
+2584,Marshall Islands,MH,Country
+2585,Palau,PW,Country
+2586,Pakistan,PK,Country
+2591,Panama,PA,Country
+2598,Papua New Guinea,PG,Country
+2600,Paraguay,PY,Country
+2604,Peru,PE,Country
+2608,Philippines,PH,Country
+2612,Pitcairn Islands,PN,Country
+2616,Poland,PL,Country
+2620,Portugal,PT,Country
+2624,Guinea-Bissau,GW,Country
+2626,Timor-Leste,TL,Country
+2630,Puerto Rico,PR,Region
+2634,Qatar,QA,Country
+2638,Reunion,RE,Region
+2642,Romania,RO,Country
+2643,Russia,RU,Country
+2646,Rwanda,RW,Country
+2654,"Saint Helena, Ascension and Tristan da Cunha",SH,Country
+2659,Saint Kitts and Nevis,KN,Country
+2660,Anguilla,AI,Region
+2662,Saint Lucia,LC,Country
+2666,Saint Pierre and Miquelon,PM,Country
+2670,Saint Vincent and the Grenadines,VC,Country
+2674,San Marino,SM,Country
+2678,Sao Tome and Principe,ST,Country
+2682,Saudi Arabia,SA,Country
+2686,Senegal,SN,Country
+2688,Serbia,RS,Country
+2690,Seychelles,SC,Country
+2694,Sierra Leone,SL,Country
+2702,Singapore,SG,Country
+2703,Slovakia,SK,Country
+2704,Vietnam,VN,Country
+2705,Slovenia,SI,Country
+2706,Somalia,SO,Country
+2710,South Africa,ZA,Country
+2716,Zimbabwe,ZW,Country
+2724,Spain,ES,Country
+2732,Western Sahara,EH,Region
+2736,Sudan,SD,Country
+2740,Suriname,SR,Country
+2744,Svalbard and Jan Mayen,SJ,Region
+2748,Eswatini,SZ,Country
+2752,Sweden,SE,Country
+2756,Switzerland,CH,Country
+2762,Tajikistan,TJ,Country
+2764,Thailand,TH,Country
+2768,Togo,TG,Country
+2772,Tokelau,TK,Country
+2776,Tonga,TO,Country
+2780,Trinidad and Tobago,TT,Country
+2784,United Arab Emirates,AE,Country
+2788,Tunisia,TN,Country
+2792,Turkey,TR,Country
+2795,Turkmenistan,TM,Country
+2796,Turks and Caicos Islands,TC,Region
+2798,Tuvalu,TV,Country
+2800,Uganda,UG,Country
+2804,Ukraine,UA,Country
+2807,North Macedonia,MK,Country
+2818,Egypt,EG,Country
+2826,United Kingdom,GB,Country
+2831,Guernsey,GG,Country
+2832,Jersey,JE,Country
+2834,Tanzania,TZ,Country
+2840,United States,US,Country
+2850,U.S. Virgin Islands,VI,Region
+2854,Burkina Faso,BF,Country
+2858,Uruguay,UY,Country
+2860,Uzbekistan,UZ,Country
+2862,Venezuela,VE,Country
+2876,Wallis and Futuna,WF,Country
+2882,Samoa,WS,Country
+2887,Yemen,YE,Country
+2894,Zambia,ZM,Country
+2900,Kosovo,XK,Region
