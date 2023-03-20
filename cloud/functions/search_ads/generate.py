@@ -1,4 +1,4 @@
-# Copyright 2022 Google LLC
+# Copyright 2023 Google LLC
 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,8 +23,8 @@ from sentence_transformers import SentenceTransformer
 from datetime import datetime
 
 #category_name, TRIX_id
-#Generic to Customer,1JEpCxvJQX2Xeu2YVP7scAIRySdS5gyzWl8ZKK2_CTp8
-_DEFAULT_CATEGORY_ID = '1JEpCxvJQX2Xeu2YVP7scAIRySdS5gyzWl8ZKK2_CTp8'
+#Generic to Customer,1JExxxxeu2YVP7scAIRySdS5gyzWl8ZKK2_CTp8
+_DEFAULT_CATEGORY_ID = '1JExxxxeu2YVP7scAIRySdS5gyzWl8ZKK2_CTp8'
 _DEFAULT_CATEGORY = 'Generic to Customer'
 _CATEGORY_SIMILARITY_SHRESHOLD = 0.65
 

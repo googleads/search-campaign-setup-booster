@@ -1,4 +1,4 @@
-# Copyright 2022 Google LLC
+# Copyright 2023 Google LLC
 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -42,13 +42,13 @@ from googleapiclient import discovery
 # credential settings
 CREDENTIAL_COLLECTION_NAME = 'credentials'
 CREDENTIAL_DOCUMENT_NAME = 'search'
-KEYWORD_EXPANSION_TRIX_ID = "1g9IDsTmM86XFY02M2ZLRoOOWAWUCbsWTCrEzmJgcp6M"
+KEYWORD_EXPANSION_TRIX_ID = "1x6TI4kecO6W4Rxb7y7zfcDZpUiogL290vHgCxl_8PME"
 
 #Google Ads Account Id
-CUSTOMER_ID = '9510520911'
+CUSTOMER_ID = '123456789'
 
 #Google Group Email
-GOOGLE_GROUP_EMAIL = 'grcn-gps-search@google.com'
+GOOGLE_GROUP_EMAIL = 'search-group@email.com'
 
 # a string to mark record status
 STATUS_DONE = 'DONE'

@@ -1,4 +1,4 @@
-# Copyright 2022 Google LLC
+# Copyright 2023 Google LLC
 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -213,7 +213,7 @@ class EstimateModule:
 
   def estimate(self, customer_id, keywords, country_list, language_code):
 
-    keyword_plan_id = self._add_keyword_plan('9510520911', keywords, country_list, language_code)
+    keyword_plan_id = self._add_keyword_plan('123456789', keywords, country_list, language_code)
     keyword_plan_service = self.client.get_service("KeywordPlanService")
     resource_name = keyword_plan_service.keyword_plan_path(
     customer_id, keyword_plan_id
