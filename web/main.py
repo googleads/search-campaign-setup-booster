@@ -43,7 +43,7 @@ def index():
   # else:
   #   credentials, _ = google.auth.default()
   gc = gspread.authorize(credentials)
-  sh = gc.open_by_key(app.config['KEYWORD_EXPANSION_TRIX_ID'])
+  sh = gc.open_by_key(app.config['KEYWORD_EXPANSION_SHEET_ID'])
   ws = sh.worksheet('Templates')
   category_list = ws.col_values(1)[1:]
   return render_template('index.html', category_list=category_list)
@@ -96,7 +96,7 @@ def submit():
   # else:
   #   credentials, _ = google.auth.default()
   gc = gspread.authorize(credentials)
-  sh = gc.open_by_key(app.config['KEYWORD_EXPANSION_TRIX_ID'])
+  sh = gc.open_by_key(app.config['KEYWORD_EXPANSION_SHEET_ID'])
   ws = sh.worksheet('Form Responses 1')
   records = ws.get_all_records()
   # ROW number of next record. Plus 2 means one line for header, one line for new record.
@@ -113,7 +113,7 @@ def sheets():
   credentials = Credentials.from_authorized_user_info(credential_dict)
   gc = gspread.authorize(credentials)
   # gc = gspread.service_account()
-  sh = gc.open_by_key(app.config['KEYWORD_EXPANSION_TRIX_ID'])
+  sh = gc.open_by_key(app.config['KEYWORD_EXPANSION_SHEET_ID'])
   ws = sh.worksheet('Form Responses 1')
   records = ws.get_all_records()
   return str(len(records))

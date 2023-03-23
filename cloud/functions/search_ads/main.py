@@ -42,13 +42,13 @@ from googleapiclient import discovery
 # credential settings
 CREDENTIAL_COLLECTION_NAME = 'credentials'
 CREDENTIAL_DOCUMENT_NAME = 'search'
-KEYWORD_EXPANSION_TRIX_ID = "1x6TI4kecO6W4Rxb7y7zfcDZpUiogL290vHgCxl_8PME"
+KEYWORD_EXPANSION_SHEET_ID = "INSERT_SHEET_ID_HERE"
 
 #Google Ads Account Id
-CUSTOMER_ID = '123456789'
+CUSTOMER_ID = 'INSERT_CUSTOMER_ID_HERE'
 
 #Google Group Email
-GOOGLE_GROUP_EMAIL = 'search-group@email.com'
+GOOGLE_GROUP_EMAIL = 'INSERT_GROUP_EMAIL_HERE'
 
 # a string to mark record status
 STATUS_DONE = 'DONE'
@@ -58,11 +58,11 @@ STATUS_ERROR = 'ERROR'
 FORM_COLUMN = 12
 # 4 additional columns are: Status, Logs, 2 URLs
 
-def create_keyword_expansion_trix(gc, client_name):
+def create_keyword_expansion_sheet(gc, client_name):
   kwe_sh = gc.create(f"{client_name} Keywords Expansion Result {datetime.datetime.now().strftime('%Y%m%d%H%M%S')}")
   return kwe_sh
 
-def fill_in_keywork_expansion_trix(gc, url, dataframe):
+def fill_in_keywork_expansion_sheet(gc, url, dataframe):
   kwe_sh = gc.open_by_url(url)
   kwe_ws = kwe_sh.sheet1
   set_with_dataframe(kwe_ws, dataframe)
@@ -120,7 +120,7 @@ def solve_request(event, context):
   service = discovery.build('sheets', 'v4', credentials=credentials)
     
   gc = gspread.authorize(credentials)
-  sh = gc.open_by_key(KEYWORD_EXPANSION_TRIX_ID)
+  sh = gc.open_by_key(KEYWORD_EXPANSION_SHEET_ID)
   ws = sh.worksheet('Form Responses 1')
 
   # from class mining and estimate
@@ -143,11 +143,11 @@ def solve_request(event, context):
       # new request
       current_count += 1
       try:
-        # TRIX Request
+        # SHEET Request
         request_ws = sh.worksheet('Form Responses 1')
 
-        # generate keyword expansion result to trix
-        kwe_sh = create_keyword_expansion_trix(gc, r['Client Name'])
+        # generate keyword expansion result to sheet
+        kwe_sh = create_keyword_expansion_sheet(gc, r['Client Name'])
         # get seed from sheet
         seed = r['Seed Keywords']
         if len(seed) > 0:
@@ -165,7 +165,7 @@ def solve_request(event, context):
         top_30_keywords = select_30_keywords(kwe_res)
         # print(top_30_keywords)
         # kwe_res = kwe_res.sort_values(['monthly_search', 'cpc'], ascending=[True, True])
-        fill_in_keywork_expansion_trix(gc, kwe_sh.url, kwe_res)
+        fill_in_keywork_expansion_sheet(gc, kwe_sh.url, kwe_res)
         request_ws.update_cell(row_num, FORM_COLUMN+3, kwe_sh.url)
         # fetch product category from homepage url
         if r['Optional Product Type'] == '':
@@ -176,8 +176,8 @@ def solve_request(event, context):
             request_ws.update_cell(row_num, FORM_COLUMN, product_category)
             r['Optional Product Type'] = product_category
 
-        # generate Ads campaign information to trix
-        ads_sh = generate.create_ads_campaign_trix(gc, service, r['Client Name'])
+        # generate Ads campaign information to sheet
+        ads_sh = generate.create_ads_campaign_sheet(gc, service, r['Client Name'])
         # 'Optional Product Type': ''
         if r['Optional Product Type'] == '':
           # headlines should between 3 to 15
@@ -218,8 +218,8 @@ def solve_request(event, context):
           Keyword_res = pd.DataFrame.from_dict(keyword_df)
           Creative_res = pd.DataFrame.from_dict(creative_df)
         
-        generate.fill_in_ads_campaign_trix(gc, ads_sh.url, Campaign_res, Adgroup_res, Keyword_res, Creative_res)
-        # share keyword trix and template trix
+        generate.fill_in_ads_campaign_sheet(gc, ads_sh.url, Campaign_res, Adgroup_res, Keyword_res, Creative_res)
+        # share keyword sheet and template sheet
         kwe_sh.share(r['Email Address'], perm_type='user', role='writer')
         kwe_sh.share(GOOGLE_GROUP_EMAIL, perm_type='group', role='writer', notify=False)
         ads_sh.share(r['Email Address'], perm_type='user', role='writer')

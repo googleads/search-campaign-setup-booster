@@ -17,17 +17,17 @@ from datetime import timedelta
 
 # session
 SECRET_KEY = os.urandom(24)
-PERMANENT_SESSION_LIFETIME = timedelta(days=7)  # 配置7天有效
+PERMANENT_SESSION_LIFETIME = timedelta(days=7)  # session last for 7 days
 
 # credential
-PROJECT_ID = 'search-project-id'
-CLIENT_ID = '571404068263-xxxxxxxxqn7o34oh2k0m.apps.googleusercontent.com'
-CLIENT_SECRET = 'XXXXX-kmffYFP6p5VK5bOWh_S_bXXXXX'
-DEVELOPER_TOKEN = 'WXXXXXXXXXX6ktw'
+PROJECT_ID = 'INSERT_GCP_ID_HERE'
+CLIENT_ID = 'INSERT_CLIENT_ID_HERE'
+CLIENT_SECRET = 'INSERT_CLIENT_SECRET_HERE'
+DEVELOPER_TOKEN = 'INSERT_DEVELOPER_TOKEN_HERE'
 
 # credential save path
 CREDENTIAL_COLLECTION_NAME = 'credentials'
 CREDENTIAL_DOCUMENT_NAME = 'search'
 
 # app setting
-KEYWORD_EXPANSION_TRIX_ID = "XXXmM8XXXXXXWTCrEzmJgcp6M"
+KEYWORD_EXPANSION_SHEET_ID = "INSERT_SHEET_ID_HERE"

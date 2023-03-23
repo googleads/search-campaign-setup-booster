@@ -22,15 +22,16 @@ from gspread_formatting.dataframe import format_with_dataframe
 from sentence_transformers import SentenceTransformer
 from datetime import datetime
 
-#category_name, TRIX_id
-#Generic to Customer,1JExxxxeu2YVP7scAIRySdS5gyzWl8ZKK2_CTp8
-_DEFAULT_CATEGORY_ID = '1JExxxxeu2YVP7scAIRySdS5gyzWl8ZKK2_CTp8'
+#category_name, SHEET_id
+#Generic to Customer,INSERT_SHEET_ID_HERE
+_DEFAULT_CATEGORY_ID = 'INSERT_SHEET_ID_HERE'
 _DEFAULT_CATEGORY = 'Generic to Customer'
 _CATEGORY_SIMILARITY_SHRESHOLD = 0.65
 
-# this is TRIX_ID of Upload Templates
-# don't change this TRIX file. creating new ads campaign TRIX rely on this TRIX.
-UPLOAD_TEMPLATE_TRIX_ID = "1-Zx04HuqV_DN-GNTiOzmneGzgbS7Va6iXz7ereSQlLQ"
+# this is SHEET_ID of Upload Templates
+# don't change this SHEET file. creating new ads campaign SHEET rely on this SHEET.
+# You can copy your own template sheet from this ID
+UPLOAD_TEMPLATE_SHEET_ID = "1Bdkuqbo5QeO05HHHHtZB9wApRd90R4F-KBxJDrPQQzQ"
 WORKSHEET_ID_LIST = [605956942, 1408798411, 1120179933, 822144526]
 
 HEADLINE_PROMOTION_NUM = 3
@@ -60,7 +61,7 @@ class GenerateModule:
         res = cat
     return res
 
-  def _convert_TRIX_id(self, category, default_category):
+  def _convert_sheet_id(self, category, default_category):
     category = str(category)
     print(category)
     base_path = os.path.dirname(__file__)
@@ -77,11 +78,11 @@ class GenerateModule:
       else:
         print(f'Input {category}, can not find similar category, use default {default_category}.')
         final_category = default_category
-      ID_list = list(df[(df.category_name == final_category)]['TRIX_id'])
+      ID_list = list(df[(df.category_name == final_category)]['SHEET_id'])
       return ID_list[0]
     except:
-      print('Category TRIX not found. using default template.')
-      ID_list = list(df[(df.category_name == default_category)]['TRIX_id'])
+      print('Category SHEET not found. using default template.')
+      ID_list = list(df[(df.category_name == default_category)]['SHEET_id'])
       return ID_list[0]
 
   def select_creatives(self, sh, position, promotion_num, shipping_num, product_num):
@@ -104,9 +105,9 @@ class GenerateModule:
     return res[:product_num + promotion_num + shipping_num]
 
   def get_new_headlines(self, category, client, counts, default_category=_DEFAULT_CATEGORY):
-    TRIX_id = self._convert_TRIX_id(category, default_category)
+    SHEET_id = self._convert_sheet_id(category, default_category)
     try:
-      sh = self.gc.open_by_key(TRIX_id)
+      sh = self.gc.open_by_key(SHEET_id)
     except:
       sh = self.gc.open_by_key(_DEFAULT_CATEGORY_ID)
     headlines_module = self.select_creatives(sh, 'Headlines', HEADLINE_PROMOTION_NUM, HEADLINE_SHIPPING_NUM, HEADLINE_PRODUCT_NUM)
@@ -119,10 +120,10 @@ class GenerateModule:
     return results
 
   def get_new_descriptions(self, category, client, counts, default_category=_DEFAULT_CATEGORY):
-    TRIX_id = self._convert_TRIX_id(category, default_category)
-    #print(TRIX_id)
+    SHEET_id = self._convert_sheet_id(category, default_category)
+    #print(SHEET_id)
     try:
-      sh = self.gc.open_by_key(TRIX_id)
+      sh = self.gc.open_by_key(SHEET_id)
     except:
       sh = self.gc.open_by_key(_DEFAULT_CATEGORY_ID)    
     descriptions_module = self.select_creatives(sh, 'Descriptions', DESCRIPTION_PROMOTION_NUM, DESCRIPTION_SHIPPING_NUM, DESCRIPTION_PRODUCT_NUM)
@@ -134,10 +135,10 @@ class GenerateModule:
     print(results)
     return results
 
-    # create a ads campaign TRIX using existing template
-  def create_ads_campaign_trix(self, gc, service, client_name):
+    # create a ads campaign SHEET using existing template
+  def create_ads_campaign_sheet(self, gc, service, client_name):
     ads_sh = self.gc.create(f"{client_name} Search Campaign Upload Form {datetime.now().strftime('%Y%m%d%H%M%S')}")
-    source_sh_id = UPLOAD_TEMPLATE_TRIX_ID
+    source_sh_id = UPLOAD_TEMPLATE_SHEET_ID
     print(source_sh_id)
     destination_sh_id = ads_sh.id
     print(destination_sh_id)
@@ -157,7 +158,7 @@ class GenerateModule:
     #print(ads_sh.worksheets())
     return ads_sh
 
-  def fill_in_ads_campaign_trix(self, gc, url, Campaign_res, Adgroup_res, Keyword_res, Creative_res):
+  def fill_in_ads_campaign_sheet(self, gc, url, Campaign_res, Adgroup_res, Keyword_res, Creative_res):
     ads_sh = self.gc.open_by_url(url)
     Campaign_df = pd.DataFrame(Campaign_res)
     ws1 = ads_sh.worksheet('Campaign')

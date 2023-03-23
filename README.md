@@ -1,55 +1,54 @@
 # Search Campaign Setup Booster
-Disclaimer: This is not an official Google Product.
+**Disclaimer**: This is not an official Google Product.
 
-This is an example of how to leverage Google Ads API to create campaign, adgroup, fetch keywords ideas and get estimated metrics.
+This is a tool that illustrates how to leverage [Google Ads API](https://developers.google.com/google-ads/api/docs/start) to create campaigns and ad groups as well as, fetch keywords ideas and get estimated metrics.
+This tool is created by Google Ads gPS GrCN team. Please contact your gPSer if you have any questions. As an alternative, you may also create an issue in the GitHub issue tracker.
 
-This tool is created by Google Ads gPS GrCN team. Please contact your PoC if you have any questions. Or you can fire an issue in the github page.
+# Introduction
 
-## Introduction
+This app is an all-in-one request form built with Flask on Google Cloud AppEngine for Search Ads. It helps onboarding Google Ads search campaigns with a single click, including creating multiple ad groups and generating text creatives.
+This toolkit uses keyword planner API. Functions are executed on Google Cloud Platform. This toolkit can easily be deployed for both developers and users.
 
-This app is an all-in-one request form build with Flask on google cloud app engine for search ads. It helps onboarding Google Ads search campaigns within one click, including creating multiple ad groups and generating text creatives.
+# Architecture
 
-This toolkit uses keyword planner API, and functions are executed on GCP. Toolkits can easily be deployed for developers and users. 
+The tool contains the following parts:
 
-### Architecture
+Cloud: The project leverages the Google Cloud Function and scheduler to fetch requests from request Google Sheets, and extract categories from the website homepage, create campaign & ad groups, get new keywords from api, and write text creatives based on templates.
 
-The tool contains "cloud" and "web" part:
+Web: This is a web frontend built on Flask and Google AppEngine, to let users easily submit requests. It has several parts to fill: receiver email, client information, target and bidding, and other optional fields.
 
-cloud: leverage the google cloud function and scheduler, to fetch requests from request google sheets, and execute extract the website, create campaign & adgroups, get new keywords from api, and write text creatives based on templates.
-
-web: a UI built on flask and google app engine, to let users easily submit requests. It has several parts to fill: receiver email, client information, target and bidding, and other optional fields.
 
 # Setup
-It requires the google ads api token and oauth client id and secret
+This tool requires a Google Ads API Developer Token and an OAuth Client ID and Secret.
 
-You can refer this [link](https://developers.google.com/google-ads/api/docs/start) to apply a api token
+- You can refer this [link](https://developers.google.com/google-ads/api/docs/start) to apply for a Developer Token.
 
-and this [link](https://support.google.com/cloud/answer/6158849?hl=en) to obtain oauth
+- Follow this [link](https://support.google.com/cloud/answer/6158849?hl=en) for instructions on how to obtain an OAuth client ID and secret.
 
-Please create your own before using, and:
+After creating your own Google Ads API Token and OAuth Client ID and Secret, you can continue these steps:
 
-copy `web/config.py.template` to `web/config.py`
+- copy `web/config.py.template` to `web/config.py`
 
-edit the params in `web/config.py`
+- edit the params in `web/config.py`
 
 ```
-PROJECT_ID = 'search-project-id'
-CLIENT_ID = '571404068263-xxxxxxxxqn7o34oh2k0m.apps.googleusercontent.com'
-CLIENT_SECRET = 'XXXXX-kmffYFP6p5VK5bOWh_S_bXXXXX'
-DEVELOPER_TOKEN = 'WXXXXXXXXXX6ktw'
+PROJECT_ID = 'INSERT_GCP_ID_HERE'
+CLIENT_ID = 'INSERT_CLIENT_ID_HERE'
+CLIENT_SECRET = 'INSERT_CLIENT_SECRET_HERE'
+DEVELOPER_TOKEN = 'INSERT_DEVELOPER_TOKEN_HERE'
 ```
 
 # Init
 
-Use Firestore as NoSQL Storage, have your account with ads API token access and sheets access
+Use Firestore as a NoSQL Storage. Give your email account access to both your Google Ads account and Google Sheets.
 
-remember to give the `project_id@appspot.gserviceaccount.com` Role and Permissions
+Remember to give the `project_id@appspot.gserviceaccount.com` Role and Permissions
 
 `gcloud init` to choose your GCP
 
-run `python setup.py` to generate credentials for sheets and google ads
+Run `python setup.py` to generate credentials for sheets and google ads
 
-run `gcloud auth application-default login` if you need google cloud credentials
+Run `gcloud auth application-default login` if you need google cloud credentials
 
 Request form, make a copy of https://docs.google.com/spreadsheets/d/1mhiNXsc083Ykf7BTbhKxctCSN-_1BpgyEx-lb0gVBzU
 
