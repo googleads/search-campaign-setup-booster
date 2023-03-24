@@ -50,7 +50,7 @@ Run `python setup.py` to generate credentials for sheets and google ads
 
 Run `gcloud auth application-default login` if you need google cloud credentials
 
-Request form, make a copy of https://docs.google.com/spreadsheets/d/1mhiNXsc083Ykf7BTbhKxctCSN-_1BpgyEx-lb0gVBzU
+Request form, make a copy of https://docs.google.com/spreadsheets/d/1L_h22t3SWFflmU-RbpUkOtM_Lc78Ooo-otf4azZzSNw
 
 # Develop
 

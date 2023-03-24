@@ -31,7 +31,7 @@ _CATEGORY_SIMILARITY_SHRESHOLD = 0.65
 # this is SHEET_ID of Upload Templates
 # don't change this SHEET file. creating new ads campaign SHEET rely on this SHEET.
 # You can copy your own template sheet from this ID
-UPLOAD_TEMPLATE_SHEET_ID = "1Bdkuqbo5QeO05HHHHtZB9wApRd90R4F-KBxJDrPQQzQ"
+UPLOAD_TEMPLATE_SHEET_ID = "1lYtFQhKxmxknOHrctfZZQNjNzdxv0gzXC0wCysXxWC8"
 WORKSHEET_ID_LIST = [605956942, 1408798411, 1120179933, 822144526]
 
 HEADLINE_PROMOTION_NUM = 3
